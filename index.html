@@ -221,28 +221,33 @@
 <footer>
         <p>&copy; 2026 - Site Educativo sobre Transtornos Alimentares. Desenvolvido para conscientização. Não substitui aconselhamento médico profissional. </a></p>
     </footer>
-
-<script>
-    function mostrar(id) {
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => card.style.display = 'none');
-
-        const header = document.getElementById('home');
-
-        if (id === 'home') {
-            header.style.display = 'block';
-        } else {
-            header.style.display = 'none';
-            document.getElementById(id).style.display = 'block';
-        }
-    }
-
     
-    mostrar('home'); /*Mostra a Home ao abrir o site*/
-</script>
+<script>
+function mostrar(id) {
 
+    // Esconde o header
+    document.getElementById("home").style.display = "none";
+
+    // Esconde todos os cards
+    const secoes = document.querySelectorAll(".card");
+    secoes.forEach(secao => {
+        secao.style.display = "none";
+    });
+
+    // Se for home, mostra o header
+    if (id === "home") {
+        document.getElementById("home").style.display = "block";
+    } else {
+        document.getElementById(id).style.display = "block";
+    }
+}
+
+// Mostra a home ao abrir
+mostrar("home");
+</script>
 </body>
 </html>
+
 
 
 
